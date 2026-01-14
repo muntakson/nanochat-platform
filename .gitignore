@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+venv_new/
+ENV/
+env/
+.venv/
+
+# Logs
+*.log
+backend/*.log
+backend/backend_test.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+backend/data/*.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# User data
+backend/uploads/
+backend/user_data/
+user_data/
+
+# Test files
+TEST_*.sh
+START.sh
+
+# OS
+.DS_Store
+Thumbs.db
