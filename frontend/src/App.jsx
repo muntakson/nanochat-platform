@@ -4,6 +4,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Dashboard from './pages/Dashboard'
 import NotebookPage from './pages/NotebookPage'
+import ChatPage from './pages/ChatPage'
+import EvalPage from './pages/EvalPage'
 
 function PrivateRoute({ children }) {
   const { user } = useAuth()
@@ -50,6 +52,22 @@ function App() {
             element={
               <PrivateRoute>
                 <NotebookPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              <PrivateRoute>
+                <ChatPage />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/eval"
+            element={
+              <PrivateRoute>
+                <EvalPage />
               </PrivateRoute>
             }
           />

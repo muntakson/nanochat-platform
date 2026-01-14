@@ -69,12 +69,11 @@ export default function Dashboard() {
   }
 
   const handleChatClick = () => {
-    window.open('https://gpt2.iotok.org:8888/', '_blank')
+    navigate('/chat')
   }
 
   const handleEvalClick = () => {
-    window.open('https://gpt2.iotok.org:8888/', '_blank')
-    // After opening, user can click "Eval" tab
+    navigate('/eval')
   }
 
   return (

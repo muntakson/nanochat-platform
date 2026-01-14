@@ -6,7 +6,7 @@ A Google Colab-style notebook platform for running nanochat code
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
-from app.api import auth, projects, notebooks, execute, inference, ipynb
+from app.api import auth, projects, notebooks, execute, inference, ipynb, chat, eval
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -34,6 +34,8 @@ app.include_router(notebooks.router, prefix="/notebooks", tags=["Notebooks"])
 app.include_router(execute.router, prefix="/execute", tags=["Execute"])
 app.include_router(inference.router, prefix="/inference", tags=["Inference"])
 app.include_router(ipynb.router, prefix="/ipynb", tags=["IPYNB Files"])
+app.include_router(chat.router, prefix="/chat", tags=["Chat"])
+app.include_router(eval.router, prefix="/eval", tags=["Evaluation"])
 
 
 @app.get("/")
