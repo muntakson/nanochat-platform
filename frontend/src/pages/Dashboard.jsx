@@ -68,13 +68,32 @@ export default function Dashboard() {
     }
   }
 
+  const handleChatClick = () => {
+    window.open('https://gpt2.iotok.org:8888/', '_blank')
+  }
+
+  const handleEvalClick = () => {
+    window.open('https://gpt2.iotok.org:8888/', '_blank')
+    // After opening, user can click "Eval" tab
+  }
+
   return (
     <div style={styles.container}>
       <div style={styles.header}>
         <h1 style={styles.title}>🚀 NanoChat Platform</h1>
-        <div style={styles.userInfo}>
-          <span>👤 {user?.username}</span>
-          <button onClick={logout} style={styles.logoutButton}>Logout</button>
+        <div style={styles.headerRight}>
+          <div style={styles.navButtons}>
+            <button onClick={handleChatClick} style={styles.navButton}>
+              💬 Chat
+            </button>
+            <button onClick={handleEvalClick} style={styles.navButton}>
+              ✅ Eval
+            </button>
+          </div>
+          <div style={styles.userInfo}>
+            <span>👤 {user?.username}</span>
+            <button onClick={logout} style={styles.logoutButton}>Logout</button>
+          </div>
         </div>
       </div>
 
@@ -171,6 +190,27 @@ const styles = {
     alignItems: 'center',
   },
   title: { margin: 0 },
+  headerRight: {
+    display: 'flex',
+    gap: '20px',
+    alignItems: 'center',
+  },
+  navButtons: {
+    display: 'flex',
+    gap: '10px',
+    alignItems: 'center',
+  },
+  navButton: {
+    padding: '8px 16px',
+    background: 'rgba(255,255,255,0.9)',
+    color: '#667eea',
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    fontWeight: '600',
+    fontSize: '14px',
+    transition: 'all 0.2s ease',
+  },
   userInfo: { display: 'flex', gap: '15px', alignItems: 'center' },
   logoutButton: {
     padding: '8px 16px',
